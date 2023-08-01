@@ -22,17 +22,12 @@ public class AgenziaImmobiliare {
 
     // cercare un immobile tramite codice alfanumerico
     public Immobile trovaImmobile (String codiceImmobile){
-       boolean trovato = false;
-       int contatore=0;
-       Immobile immobileCercato = null;
-        while (!trovato && contatore<listaImmobili.size()){
-            if (codiceImmobile.equals(listaImmobili.get(contatore).getCodiceImmobile())) {
-                immobileCercato=listaImmobili.get(contatore);
-                trovato=true;
+        for (Immobile immobile:listaImmobili){
+            if (codiceImmobile.equals(immobile.getCodiceImmobile())){
+                return immobile;
             }
-            contatore ++;
         }
-        return immobileCercato;
+        return null;
     }
 
     // restituire l'immobile con il maggior numero di persone interessate
