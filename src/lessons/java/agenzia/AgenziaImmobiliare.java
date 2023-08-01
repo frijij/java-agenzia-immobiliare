@@ -1,20 +1,48 @@
 package lessons.java.agenzia;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class AgenziaImmobiliare {
-    /*
-    Definire una classe AgenziaImmobiliare che contiene una lista di immobili e presenta
-un metodo per aggiungere un immobile
-un metodo per la ricerca di un immobile a partire dal codice alfanumerico
-un metodo per restituire l’immobile che ha avuto il maggior numero di persone interessate
-     */
 
     // ATTRIBUTI
+    private List<Immobile> listaImmobili;
 
     // COSTRUTTORI
+    public AgenziaImmobiliare() {
+      listaImmobili = new ArrayList<>();
+    }
 
     // GETTER E SETTER
 
     // METODI
+    // aggiugnere un immobile
+    public void aggiungiImmobile(Immobile immobile){
+        listaImmobili.add(immobile);
+    }
 
+    // cercare un immobile tramite codice alfanumerico
+    public Immobile trovaImmobile (String codiceImmobile){
+       boolean trovato = false;
+       int contatore=0;
+       Immobile immobileCercato = null;
+        while (!trovato && contatore<listaImmobili.size()){
+            if (codiceImmobile.equals(immobileCercato.getCodiceImmobile())) {
+                trovato=true;
+            }
+            contatore ++;
+        }
+        return immobileCercato;
+    }
 
+    // restituire l'immobile con il maggior numero di persone interessate
+    public Immobile piuInteressati() {
+        Immobile immobilePiuPiaciuto = null;
+        for (Immobile immobile : listaImmobili){
+            if (immobile.getInteressati()>immobilePiuPiaciuto.getInteressati(){
+                immobilePiuPiaciuto = immobile;
+            }
+        }
+        return immobilePiuPiaciuto;
+    }
 }
