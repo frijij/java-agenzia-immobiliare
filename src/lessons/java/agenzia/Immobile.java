@@ -49,9 +49,8 @@ public class Immobile {
 
     // METODI
     // incrementare il numero degli interessati
-    public int aggiungiInteressati(){
-        // TO DO
-        return interessati;
+    public int aggiungiInteressati(int nuoviInteressati){
+        return interessati+=nuoviInteressati;
     }
 
     // reimpostare la superficie prendendo in input la nuova superficie
