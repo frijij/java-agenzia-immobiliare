@@ -39,7 +39,7 @@ public class AgenziaImmobiliare {
     public Immobile piuInteressati() {
         Immobile immobilePiuPiaciuto = null;
         for (Immobile immobile : listaImmobili){
-            if (immobile.getInteressati()>immobilePiuPiaciuto.getInteressati(){
+            if (immobile.getInteressati()>immobilePiuPiaciuto.getInteressati()){
                 immobilePiuPiaciuto = immobile;
             }
         }
