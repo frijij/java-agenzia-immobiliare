@@ -12,7 +12,6 @@ public class AgenziaImmobiliare {
     public AgenziaImmobiliare() {
       listaImmobili = new ArrayList<>();
     }
-
     // GETTER E SETTER
 
     // METODI
@@ -27,7 +26,8 @@ public class AgenziaImmobiliare {
        int contatore=0;
        Immobile immobileCercato = null;
         while (!trovato && contatore<listaImmobili.size()){
-            if (codiceImmobile.equals(immobileCercato.getCodiceImmobile())) {
+            if (codiceImmobile.equals(listaImmobili.get(contatore).getCodiceImmobile())) {
+                immobileCercato=listaImmobili.get(contatore);
                 trovato=true;
             }
             contatore ++;
@@ -36,13 +36,21 @@ public class AgenziaImmobiliare {
     }
 
     // restituire l'immobile con il maggior numero di persone interessate
-    public Immobile piuInteressati() {
-        Immobile immobilePiuPiaciuto = null;
-        for (Immobile immobile : listaImmobili){
-            if (immobile.getInteressati()>immobilePiuPiaciuto.getInteressati()){
+    public Immobile conPiuInteressati() {
+      Immobile immobilePiuPiaciuto = null;
+        int interessati =0;
+            for (Immobile immobile : listaImmobili){
+            if (immobile.getInteressati()>interessati){
                 immobilePiuPiaciuto = immobile;
             }
         }
         return immobilePiuPiaciuto;
+    }
+
+    @Override
+    public String toString() {
+        return "Agenzia Immobiliare{" +
+                "lista immobili=" + listaImmobili +
+                '}';
     }
 }

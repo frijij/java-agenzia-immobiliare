@@ -49,10 +49,9 @@ public class Immobile {
 
     // METODI
     // incrementare il numero degli interessati
-    public int aggiungiInteressati(int nuoviInteressati){
-        return interessati+=nuoviInteressati;
-    }
-
+   public int aggiungiInteressati(){
+        return interessati++;
+}
     // reimpostare la superficie prendendo in input la nuova superficie
     public void reimpostaSuperficie(int superficieInMq) {
         this.superficieInMq = superficieInMq;
